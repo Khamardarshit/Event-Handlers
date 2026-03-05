@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 function ClickEvent() {
-  const handleClick = () => {
-    alert("Button Clicked!");
-  };
+  const [message, setMessage] = useState("Button not clicked");
 
-  return <button onClick={handleClick}>onClick Event</button>;
+  return (
+    <>
+      <button onClick={() => setMessage("Button Clicked!")}>
+        Click Me
+      </button>
+      <p>{message}</p>
+    </>
+  );
 }
 
 export default ClickEvent;

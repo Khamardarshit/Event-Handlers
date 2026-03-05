@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 
 function MouseEnterLeave() {
-  const [text, setText] = useState("Hover Me");
+  const [status, setStatus] = useState("Mouse not inside");
 
   return (
     <div
-      style={{ padding: "20px", background: "lightblue" }}
-      onMouseEnter={() => setText("Mouse Entered")}
-      onMouseLeave={() => setText("Mouse Left")}
+      style={{ padding: "15px", background: "#d1ecf1" }}
+      onMouseEnter={() => setStatus("Mouse Entered")}
+      onMouseLeave={() => setStatus("Mouse Left")}
     >
-      {text}
+      Hover Here
+      <p>Status: {status}</p>
     </div>
   );
 }

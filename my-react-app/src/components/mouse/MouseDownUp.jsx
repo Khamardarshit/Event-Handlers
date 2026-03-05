@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 
-function MouseDownUp() {
-  const [status, setStatus] = useState("Click Me");
+function MouseEnterLeave() {
+  const [status, setStatus] = useState("Mouse not inside");
 
   return (
-    <button
-      onMouseDown={() => setStatus("Mouse Down")}
-      onMouseUp={() => setStatus("Mouse Up")}
+    <div
+      style={{ padding: "15px", background: "#d1ecf1" }}
+      onMouseEnter={() => setStatus("Mouse Entered")}
+      onMouseLeave={() => setStatus("Mouse Left")}
     >
-      {status}
-    </button>
+      Hover Here
+      <p>Status: {status}</p>
+    </div>
   );
 }
 
-export default MouseDownUp;
+export default MouseEnterLeave;

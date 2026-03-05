@@ -1,3 +1,5 @@
+import "./App.css";
+
 import ClickEvent from "./components/mouse/ClickEvent";
 import DoubleClickEvent from "./components/mouse/DoubleClickEvent";
 import MouseEnterLeave from "./components/mouse/MouseEnterLeave";
@@ -11,39 +13,38 @@ import ChangeEvent from "./components/form/ChangeEvent";
 import SubmitEvent from "./components/form/SubmitEvent";
 import FocusBlurEvent from "./components/form/FocusBlurEvent";
 
-import CopyEvent from "./components/clipboard/CopyEvent";
-import CutEvent from "./components/clipboard/CutEvent";
-import PasteEvent from "./components/clipboard/PasteEvent";
-
-import TouchStartEnd from "./components/touch/TouchStartEnd";
-import MediaEvents from "./components/media/MediaEvents";
-import ResizeEvent from "./components/window/ResizeEvent";
-
 function App() {
   return (
-    <div>
-      <h1>All React Events</h1>
+    <div className="app">
+      <h1>React Event Handlers Demo</h1>
 
-      <ClickEvent />
-      <DoubleClickEvent />
-      <MouseEnterLeave />
-      <MouseMoveEvent />
-      <MouseDownUp />
+      {/* Mouse Events */}
+      <div className="section">
+        <h2>🖱️ Mouse Events</h2>
 
-      <KeyDownEvent />
-      <KeyUpEvent />
+        <div className="event-box"><ClickEvent /></div>
+        <div className="event-box"><DoubleClickEvent /></div>
+        <div className="event-box"><MouseEnterLeave /></div>
+        <div className="event-box"><MouseMoveEvent /></div>
+        <div className="event-box"><MouseDownUp /></div>
+      </div>
 
-      <ChangeEvent />
-      <SubmitEvent />
-      <FocusBlurEvent />
+      {/* Keyboard Events */}
+      <div className="section">
+        <h2>⌨️ Keyboard Events</h2>
 
-      <CopyEvent />
-      <CutEvent />
-      <PasteEvent />
+        <div className="event-box"><KeyDownEvent /></div>
+        <div className="event-box"><KeyUpEvent /></div>
+      </div>
 
-      <TouchStartEnd />
-      <MediaEvents />
-      <ResizeEvent />
+      {/* Form Events */}
+      <div className="section">
+        <h2>📝 Form Events</h2>
+
+        <div className="event-box"><ChangeEvent /></div>
+        <div className="event-box"><SubmitEvent /></div>
+        <div className="event-box"><FocusBlurEvent /></div>
+      </div>
     </div>
   );
 }

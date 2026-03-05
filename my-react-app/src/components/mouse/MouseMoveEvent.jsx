@@ -3,16 +3,16 @@ import React, { useState } from "react";
 function MouseMoveEvent() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  const handleMove = (e) => {
-    setPosition({ x: e.clientX, y: e.clientY });
-  };
-
   return (
     <div
-      style={{ height: "100px", background: "lightgray" }}
-      onMouseMove={handleMove}
+      style={{ height: "100px", background: "#f8d7da" }}
+      onMouseMove={(e) =>
+        setPosition({ x: e.clientX, y: e.clientY })
+      }
     >
-      X: {position.x} Y: {position.y}
+      <p>Move mouse inside this box</p>
+      <p>X: {position.x}</p>
+      <p>Y: {position.y}</p>
     </div>
   );
 }
